@@ -14,6 +14,12 @@ describe 'Login Page Elements' do
     @driver&.quit
   end
 
+  it 'should display the login title' do
+    login_title = @driver.find_element(class: 'login_logo')
+    expect(login_title.displayed?).to eq(true)
+    expect(login_title.text).to include('Swag Labs')
+  end
+
   it 'should display the username field' do
     username_field = @driver.find_element(id: 'user-name')
     expect(username_field.displayed?).to eq(true)
@@ -30,6 +36,7 @@ describe 'Login Page Elements' do
     login_button = @driver.find_element(id: 'login-button')
     expect(login_button.displayed?).to eq(true)
     expect(login_button.attribute('disabled')).to eq(nil)
+    expect(login_button.attribute('value')).to eq('Login')
     expect(login_button.attribute('style').include?('background-color: #3ddc91'))
   end
 

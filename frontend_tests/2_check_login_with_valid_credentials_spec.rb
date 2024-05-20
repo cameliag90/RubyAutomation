@@ -14,7 +14,7 @@ describe 'Login with valid credentials' do
   end
 
   it 'should log in successfully with valid credentials' do
-    # Create a new wait instance with a timeout of 10 seconds
+    # Create a new wait instance with a timeout of 20 seconds
     wait = Selenium::WebDriver::Wait.new(timeout: 20)
     # wait until the elements are found and store them
     username_field = wait.until { @driver.find_element(id: 'user-name') }
